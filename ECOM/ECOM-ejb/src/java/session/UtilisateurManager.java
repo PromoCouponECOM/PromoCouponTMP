@@ -10,6 +10,7 @@ import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -24,11 +25,12 @@ public class UtilisateurManager {
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method"     
     public List<Utilisateur> getAllUtilisateur() {
-        return null;
+        Query query=em.createNamedQuery("Utilisateur.findAll");
+        return query.getResultList();
     }
 
     public Utilisateur update(Utilisateur utilisateur) {
-        return null;
+        return em.merge(utilisateur);
     }
 
     public void persist(Object object) {
