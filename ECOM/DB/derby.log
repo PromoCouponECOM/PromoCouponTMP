@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+Fri Nov 15 15:13:42 CET 2013 : Apache Derby Serveur réseau - 10.8.1.2 - (1095077) démarré et prêt à accepter les connexions sur le port 1527
+----------------------------------------------------------------
+Fri Nov 15 15:13:43 CET 2013:
+Amorçage de Derby version The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077) : instance a816c00e-0142-5c1c-34cf-00005ca6d9b7 
+dans le répertoire de base de données Z:\NetBeansProjects\PromoCoupon\ECOM\DB\ECOM  avec le chargeur de classe sun.misc.Launcher$AppClassLoader@57bd06bf
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_45-b18
+user.dir=C:\Program Files (x86)\glassfish-3.1.2.2\javadb
+derby.system.home=Z:\NetBeansProjects\PromoCoupon\ECOM\DB
+=======
 Fri Nov 15 15:16:28 CET 2013 : Apache Derby Serveur réseau - 10.8.3.0 - (1405108) démarré et prêt à accepter les connexions sur le port 1527
 ----------------------------------------------------------------
 Fri Nov 15 15:16:29 CET 2013:
@@ -11,4 +23,5 @@ os.name=Windows 7
 os.arch=amd64
 os.version=6.1
 derby.system.home=C:\Users\mazetk\Documents\NetBeansProjects\PromoCoupon\ECOM\DB
+>>>>>>> branch 'master' of https://github.com/PromoCouponECOM/PromoCoupon.git
 Chargeur de classe de la base de données démarré - derby.database.classpath=''
