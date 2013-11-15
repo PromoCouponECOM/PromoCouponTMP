@@ -1,13 +1,64 @@
-Fri Nov 08 15:53:16 CET 2013 : Apache Derby Serveur réseau - 10.8.2.2 - (1181258) démarré et prêt à accepter les connexions sur le port 1527
+Fri Nov 15 14:25:46 CET 2013 : Apache Derby Serveur réseau - 10.8.1.2 - (1095077) démarré et prêt à accepter les connexions sur le port 1527
 ----------------------------------------------------------------
-Fri Nov 08 15:53:17 CET 2013:
-Amorçage de Derby version The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258) : instance a816c00e-0142-3833-dbcf-000006d148f4 
-dans le répertoire de base de données C:\Users\Anthony\Desktop\PromoCoupon\PromoCoupon\ECOM\DB\Java DB2  avec le chargeur de classe sun.misc.Launcher$AppClassLoader@79bf496b
+Fri Nov 15 14:25:47 CET 2013:
+Amorçage de Derby version The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077) : instance a816c00e-0142-5bf0-5655-00005ca6d9b7 
+dans le répertoire de base de données Z:\NetBeansProjects\PromoCoupon\ECOM\DB\ECOM  avec le chargeur de classe sun.misc.Launcher$AppClassLoader@57bd06bf
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_11-b21
-user.dir=C:\Program Files\Java\jdk1.7.0_11\db
-derby.system.home=C:\Users\Anthony\Desktop\PromoCoupon\PromoCoupon\ECOM\DB
+java.runtime.version=1.7.0_45-b18
+user.dir=C:\Program Files (x86)\glassfish-3.1.2.2\javadb
+derby.system.home=Z:\NetBeansProjects\PromoCoupon\ECOM\DB
 Chargeur de classe de la base de données démarré - derby.database.classpath=''
+Fri Nov 15 14:26:30 CET 2013 Thread[DRDAConnThread_4,5,main] Cleanup action starting
+java.sql.SQLException: Impossible de trouver la base de données 'sample'.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection30.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
+	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.Database.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Caused by: java.sql.SQLException: Impossible de trouver la base de données 'sample'.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 19 more
+============= begin nested exception, level (1) ===========
+java.sql.SQLException: Impossible de trouver la base de données 'sample'.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection30.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
+	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.Database.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+============= end nested exception, level (1) ===========
+Cleanup action completed
+Fri Nov 15 14:26:30 CET 2013 Thread[DRDAConnThread_4,5,main] (DATABASE = sample), (DRDAID = {2}), Impossible de trouver la base de données 'sample'.
 ----------------------------------------------------------------
-Fri Nov 08 15:53:42 CET 2013 : fermeture du moteur Derby
+Fri Nov 15 14:58:00 CET 2013: Shutting down Derby engine
