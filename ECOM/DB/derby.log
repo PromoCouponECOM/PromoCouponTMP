@@ -1,0 +1,13 @@
+Fri Nov 08 15:53:16 CET 2013 : Apache Derby Serveur réseau - 10.8.2.2 - (1181258) démarré et prêt à accepter les connexions sur le port 1527
+----------------------------------------------------------------
+Fri Nov 08 15:53:17 CET 2013:
+Amorçage de Derby version The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258) : instance a816c00e-0142-3833-dbcf-000006d148f4 
+dans le répertoire de base de données C:\Users\Anthony\Desktop\PromoCoupon\PromoCoupon\ECOM\DB\Java DB2  avec le chargeur de classe sun.misc.Launcher$AppClassLoader@79bf496b
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_11-b21
+user.dir=C:\Program Files\Java\jdk1.7.0_11\db
+derby.system.home=C:\Users\Anthony\Desktop\PromoCoupon\PromoCoupon\ECOM\DB
+Chargeur de classe de la base de données démarré - derby.database.classpath=''
+----------------------------------------------------------------
+Fri Nov 08 15:53:42 CET 2013 : fermeture du moteur Derby
