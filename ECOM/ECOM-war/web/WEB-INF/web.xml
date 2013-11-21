@@ -9,9 +9,17 @@
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>ControllerServlet2</servlet-name>
+        <servlet-class>ControllerServlet2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServlet2</servlet-name>
+        <url-pattern>/ControllerServlet2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
