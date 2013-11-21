@@ -13,7 +13,7 @@ import javax.ejb.LocalBean;
  */
 @Stateless
 @LocalBean
-public class UtilisateurManager {
+public class CategorieManager {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")

@@ -5,12 +5,13 @@
 package entities;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -25,160 +26,132 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author John624
  */
 @Entity
-@Table(name = "UTILISATEUR")
+@Table(name = "Utilisateur")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Utilisateur.findAll", query = "SELECT u FROM Utilisateur u"),
-    @NamedQuery(name = "Utilisateur.findByIdutilisateur", query = "SELECT u FROM Utilisateur u WHERE u.idutilisateur = :idutilisateur"),
-    @NamedQuery(name = "Utilisateur.findByAdrUser", query = "SELECT u FROM Utilisateur u WHERE u.adrUser = :adrUser"),
-    @NamedQuery(name = "Utilisateur.findByMailUser", query = "SELECT u FROM Utilisateur u WHERE u.mailUser = :mailUser"),
-    @NamedQuery(name = "Utilisateur.findByTelUser", query = "SELECT u FROM Utilisateur u WHERE u.telUser = :telUser"),
-    @NamedQuery(name = "Utilisateur.findByPassUser", query = "SELECT u FROM Utilisateur u WHERE u.passUser = :passUser"),
-    @NamedQuery(name = "Utilisateur.findByNom", query = "SELECT u FROM Utilisateur u WHERE u.nom = :nom"),
-    @NamedQuery(name = "Utilisateur.findByPrenom", query = "SELECT u FROM Utilisateur u WHERE u.prenom = :prenom"),
+    @NamedQuery(name = "Utilisateur.findByIdU", query = "SELECT u FROM Utilisateur u WHERE u.idU = :idU"),
+    @NamedQuery(name = "Utilisateur.findByMailU", query = "SELECT u FROM Utilisateur u WHERE u.mailU = :mailU"),
+    @NamedQuery(name = "Utilisateur.findByTelU", query = "SELECT u FROM Utilisateur u WHERE u.telU = :telU"),
+    @NamedQuery(name = "Utilisateur.findByPassU", query = "SELECT u FROM Utilisateur u WHERE u.passU = :passU"),
+    @NamedQuery(name = "Utilisateur.findByNomU", query = "SELECT u FROM Utilisateur u WHERE u.nomU = :nomU"),
+    @NamedQuery(name = "Utilisateur.findByPrenomU", query = "SELECT u FROM Utilisateur u WHERE u.prenomU = :prenomU"),
     @NamedQuery(name = "Utilisateur.findBySexe", query = "SELECT u FROM Utilisateur u WHERE u.sexe = :sexe"),
-    @NamedQuery(name = "Utilisateur.findByDateMotificationuser", query = "SELECT u FROM Utilisateur u WHERE u.dateMotificationuser = :dateMotificationuser")})
+    @NamedQuery(name = "Utilisateur.findByDataModif", query = "SELECT u FROM Utilisateur u WHERE u.dataModif = :dataModif")})
 public class Utilisateur implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "IDUTILISATEUR")
-    private Integer idutilisateur;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
-    @Column(name = "ADR_USER")
-    private String adrUser;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
-    @Column(name = "MAIL_USER")
-    private String mailUser;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "TEL_USER")
-    private BigInteger telUser;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
-    @Column(name = "PASS_USER")
-    private String passUser;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 20)
-    @Column(name = "NOM")
-    private String nom;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 20)
-    @Column(name = "PRENOM")
-    private String prenom;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "SEXE")
-    private int sexe;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "DATE_MOTIFICATIONUSER")
+    @Column(name = "idU")
+    private Integer idU;
+    @Size(max = 20)
+    @Column(name = "mailU")
+    private String mailU;
+    @Size(max = 10)
+    @Column(name = "telU")
+    private String telU;
+    @Size(max = 30)
+    @Column(name = "passU")
+    private String passU;
+    @Size(max = 30)
+    @Column(name = "nomU")
+    private String nomU;
+    @Size(max = 30)
+    @Column(name = "prenomU")
+    private String prenomU;
+    @Column(name = "sexe")
+    private Character sexe;
+    @Column(name = "dataModif")
     @Temporal(TemporalType.DATE)
-    private Date dateMotificationuser;
+    private Date dataModif;
+    @JoinColumn(name = "adrU", referencedColumnName = "idAdresse")
+    @ManyToOne
+    private Adresse adrU;
 
     public Utilisateur() {
     }
 
-    public Utilisateur(Integer idutilisateur) {
-        this.idutilisateur = idutilisateur;
+    public Utilisateur(Integer idU) {
+        this.idU = idU;
     }
 
-    public Utilisateur(Integer idutilisateur, String adrUser, String mailUser, BigInteger telUser, String passUser, String nom, String prenom, int sexe, Date dateMotificationuser) {
-        this.idutilisateur = idutilisateur;
-        this.adrUser = adrUser;
-        this.mailUser = mailUser;
-        this.telUser = telUser;
-        this.passUser = passUser;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.sexe = sexe;
-        this.dateMotificationuser = dateMotificationuser;
+    public Integer getIdU() {
+        return idU;
     }
 
-    public Integer getIdutilisateur() {
-        return idutilisateur;
+    public void setIdU(Integer idU) {
+        this.idU = idU;
     }
 
-    public void setIdutilisateur(Integer idutilisateur) {
-        this.idutilisateur = idutilisateur;
+    public String getMailU() {
+        return mailU;
     }
 
-    public String getAdrUser() {
-        return adrUser;
+    public void setMailU(String mailU) {
+        this.mailU = mailU;
     }
 
-    public void setAdrUser(String adrUser) {
-        this.adrUser = adrUser;
+    public String getTelU() {
+        return telU;
     }
 
-    public String getMailUser() {
-        return mailUser;
+    public void setTelU(String telU) {
+        this.telU = telU;
     }
 
-    public void setMailUser(String mailUser) {
-        this.mailUser = mailUser;
+    public String getPassU() {
+        return passU;
     }
 
-    public BigInteger getTelUser() {
-        return telUser;
+    public void setPassU(String passU) {
+        this.passU = passU;
     }
 
-    public void setTelUser(BigInteger telUser) {
-        this.telUser = telUser;
+    public String getNomU() {
+        return nomU;
     }
 
-    public String getPassUser() {
-        return passUser;
+    public void setNomU(String nomU) {
+        this.nomU = nomU;
     }
 
-    public void setPassUser(String passUser) {
-        this.passUser = passUser;
+    public String getPrenomU() {
+        return prenomU;
     }
 
-    public String getNom() {
-        return nom;
+    public void setPrenomU(String prenomU) {
+        this.prenomU = prenomU;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public int getSexe() {
+    public Character getSexe() {
         return sexe;
     }
 
-    public void setSexe(int sexe) {
+    public void setSexe(Character sexe) {
         this.sexe = sexe;
     }
 
-    public Date getDateMotificationuser() {
-        return dateMotificationuser;
+    public Date getDataModif() {
+        return dataModif;
     }
 
-    public void setDateMotificationuser(Date dateMotificationuser) {
-        this.dateMotificationuser = dateMotificationuser;
+    public void setDataModif(Date dataModif) {
+        this.dataModif = dataModif;
+    }
+
+    public Adresse getAdrU() {
+        return adrU;
+    }
+
+    public void setAdrU(Adresse adrU) {
+        this.adrU = adrU;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idutilisateur != null ? idutilisateur.hashCode() : 0);
+        hash += (idU != null ? idU.hashCode() : 0);
         return hash;
     }
 
@@ -189,7 +162,7 @@ public class Utilisateur implements Serializable {
             return false;
         }
         Utilisateur other = (Utilisateur) object;
-        if ((this.idutilisateur == null && other.idutilisateur != null) || (this.idutilisateur != null && !this.idutilisateur.equals(other.idutilisateur))) {
+        if ((this.idU == null && other.idU != null) || (this.idU != null && !this.idU.equals(other.idU))) {
             return false;
         }
         return true;
@@ -197,7 +170,7 @@ public class Utilisateur implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Utilisateur[ idutilisateur=" + idutilisateur + " ]";
+        return "entities.Utilisateur[ idU=" + idU + " ]";
     }
     
 }

@@ -1,12 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -14,74 +13,87 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author mazetk
+ * @author John624
  */
 @Entity
-@Table(name = "CATEGORIE")
+@Table(name = "Categorie")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Categorie.findAll", query = "SELECT c FROM Categorie c"),
-    @NamedQuery(name = "Categorie.findByIdcategorie", query = "SELECT c FROM Categorie c WHERE c.idcategorie = :idcategorie"),
-    @NamedQuery(name = "Categorie.findByNomcategorie", query = "SELECT c FROM Categorie c WHERE c.nomcategorie = :nomcategorie"),
-    @NamedQuery(name = "Categorie.findByDatemodificationcat", query = "SELECT c FROM Categorie c WHERE c.datemodificationcat = :datemodificationcat")})
+    @NamedQuery(name = "Categorie.findByIdCateg", query = "SELECT c FROM Categorie c WHERE c.idCateg = :idCateg"),
+    @NamedQuery(name = "Categorie.findByNomCateg", query = "SELECT c FROM Categorie c WHERE c.nomCateg = :nomCateg"),
+    @NamedQuery(name = "Categorie.findByDateModif", query = "SELECT c FROM Categorie c WHERE c.dateModif = :dateModif")})
 public class Categorie implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "IDCATEGORIE")
-    private Integer idcategorie;
-    @Size(max = 30)
-    @Column(name = "NOMCATEGORIE")
-    private String nomcategorie;
-    @Column(name = "DATEMODIFICATIONCAT")
+    @Column(name = "idCateg")
+    private Short idCateg;
+    @Size(max = 20)
+    @Column(name = "nomCateg")
+    private String nomCateg;
+    @Column(name = "dateModif")
     @Temporal(TemporalType.DATE)
-    private Date datemodificationcat;
+    private Date dateModif;
+    @OneToMany(mappedBy = "categorie")
+    private Collection<Offre> offreCollection;
 
     public Categorie() {
     }
 
-    public Categorie(Integer idcategorie) {
-        this.idcategorie = idcategorie;
+    public Categorie(Short idCateg) {
+        this.idCateg = idCateg;
     }
 
-    public Integer getIdcategorie() {
-        return idcategorie;
+    public Short getIdCateg() {
+        return idCateg;
     }
 
-    public void setIdcategorie(Integer idcategorie) {
-        this.idcategorie = idcategorie;
+    public void setIdCateg(Short idCateg) {
+        this.idCateg = idCateg;
     }
 
-    public String getNomcategorie() {
-        return nomcategorie;
+    public String getNomCateg() {
+        return nomCateg;
     }
 
-    public void setNomcategorie(String nomcategorie) {
-        this.nomcategorie = nomcategorie;
+    public void setNomCateg(String nomCateg) {
+        this.nomCateg = nomCateg;
     }
 
-    public Date getDatemodificationcat() {
-        return datemodificationcat;
+    public Date getDateModif() {
+        return dateModif;
     }
 
-    public void setDatemodificationcat(Date datemodificationcat) {
-        this.datemodificationcat = datemodificationcat;
+    public void setDateModif(Date dateModif) {
+        this.dateModif = dateModif;
+    }
+
+    @XmlTransient
+    public Collection<Offre> getOffreCollection() {
+        return offreCollection;
+    }
+
+    public void setOffreCollection(Collection<Offre> offreCollection) {
+        this.offreCollection = offreCollection;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idcategorie != null ? idcategorie.hashCode() : 0);
+        hash += (idCateg != null ? idCateg.hashCode() : 0);
         return hash;
     }
 
@@ -92,7 +104,7 @@ public class Categorie implements Serializable {
             return false;
         }
         Categorie other = (Categorie) object;
-        if ((this.idcategorie == null && other.idcategorie != null) || (this.idcategorie != null && !this.idcategorie.equals(other.idcategorie))) {
+        if ((this.idCateg == null && other.idCateg != null) || (this.idCateg != null && !this.idCateg.equals(other.idCateg))) {
             return false;
         }
         return true;
@@ -100,7 +112,7 @@ public class Categorie implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Categorie[ idcategorie=" + idcategorie + " ]";
+        return "entities.Categorie[ idCateg=" + idCateg + " ]";
     }
     
 }
