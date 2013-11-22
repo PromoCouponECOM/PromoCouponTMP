@@ -1,9 +1,16 @@
 /ECOM/ECOM-ejb/build/
 /ECOM/ECOM-ejb/dist/
+/ECOM/ECOM-ejb/nbproject/private/
 /ECOM/build/
 /ECOM/ECOM-war/build/
 /ECOM/ECOM-war/dist/
+<<<<<<< HEAD
 /ECOM/dist/
 /ECOM/nbproject/private/
 /ECOM/ECOM-war/nbproject/private/
 /ECOM/ECOM-ejb/nbproject/private/
+=======
+/ECOM/ECOM-war/nbproject/private/
+/ECOM/dist/
+/ECOM/nbproject/private/
+>>>>>>> 9b03996f78c8df57c29c4fe16d9ec035eb83f971
