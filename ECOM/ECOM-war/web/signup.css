@@ -5,6 +5,7 @@ body
     font-family: 'Trebuchet MS', Arial, sans-serif;
 	background-color : black;
     color: #181818;
+	width:100%;
 }
 
 /*background du site*/
@@ -13,10 +14,10 @@ body
 	background-color : pink;
 	border-radius: 5px;
 	box-shadow: 0px 2px 5px #1c1a19;
-	width: 1000px;
+	width: 1100px;
 	height: 680px;
 	left: 50%;
-	margin-left: -500px;
+	margin-left: -550px;
 	position: absolute;
 }
 
@@ -43,24 +44,25 @@ header nav div, header nav li
 /*logo PromoCoupon*/
 #titre_principal
 {
-	width:240px;
+	width:20%;
 	text-align: left;
 }
 
 /*barre de navigation : Accueil, Toutes les promos, Vers chez moi*/
 #navigation
 {
-	width:500px;
+	width:60%;
 	text-align: center;
 }
 
 /*connection au compte*/
 #compte
 {
-	width:240px;
+	width:19%;
 	text-align: right;
 	font-size: 10px;
 }
+
 
 
 /********** SECTION **********/
@@ -74,7 +76,7 @@ article, aside
 /* formulaire coté client */
 article
 {
-	width : 800px;
+	width : 880px;
 }
 
 #client_title
@@ -92,7 +94,7 @@ article
 /* information coté entreprise */
 aside
 {
-	width : 195px;
+	width : 215px;
 	height : 601px;
 	position: relative;
     background-color: #706b64;
