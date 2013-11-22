@@ -4,7 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <head>
 		<meta charset="utf-8" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="signup.css" />
         <title>Accueil</title>
     </head>
     <body>
@@ -32,48 +32,64 @@
 			</header>
 			
 			<section>
-				<form method="post" action="signup_succes.xhtml" onsubmit="return verifchamps()">
-					<table align="center" cellspacing="20">
-						<tbody>
-							<tr>
-								<td align="left"><b> &nbsp; </b></td>
-								<td align="left"><b> &nbsp; </b></td>								
-							</tr>
-							<tr>
-								<td align="left"><b> &nbsp; </b></td>
-								<td align="left"><b> &nbsp; </b></td>								
-							</tr>
-														<tr>
-								<td align="left"><b> &nbsp; </b></td>
-								<td align="left"><b> &nbsp; </b></td>								
-							</tr>
-							<tr>
-								<td align="left"><b> Civilit&eacute; </b><br></br>
-												<select id="civilite" onchange="VerifListe();">
-												<option value="monsieur">Monsieur</option>
-												<option value="mademoiselle">Mademoiselle</option>
-												<option value="madame">Madame</option></select></td>
-								<td align="left"><b> E-mail </b><br></br>
-												<input id="email" type="text" name="email" size="24"></input></td>									
-							</tr>
-							<tr>
-								<td align="left"><b> Nom </b><br></br>
-												<input id="nom" type="text" name="nom" size="24"></input></td>
-								<td align="left"><b> Confirmez votre e-mail </b><br></br>
-												<input id="email2" type="text" name="email2" size="24"></input></td>									
-							</tr>
-							<tr>
-								<td align="left"><b> Pr&eacute;nom </b><br></br>
-												<input id="prenom" type="text" name="prenom" size="24"></input></td>
-								<td align="left"><b> T&eacute;l&eacute;phone mobile </b><br></br>
-												<input id="telephone" type="text" name="telephone" size="24"></input></td>									
-							</tr>
-							<tr>
-								<td colspan="4" align="center"><input type="submit" class="bouton" value="Valider"></input></td>									
-							</tr>
-						</tbody>
-					</table>
-				</form>
+				<article>
+					<div id="client_title">
+						Vous-êtes un nouveau client?
+					</div>
+					<div id="client_section">
+						Inscrivez-vous dès maintenant est profitez nos nombreuses offres ! Ba ouais morray.
+					</div>
+					<form method="post" action="signup_succes.xhtml" onsubmit="return verifchamps()">
+						<table align="center" cellspacing="20">
+							<tbody>
+								<tr>
+									<td align="left"><b> &nbsp; </b></td>
+									<td align="left"><b> &nbsp; </b></td>								
+								</tr>
+								<tr>
+									<td align="left"><b> &nbsp; </b></td>
+									<td align="left"><b> &nbsp; </b></td>								
+								</tr>
+								<tr>
+									<td align="left"><b> &nbsp; </b></td>
+									<td align="left"><b> &nbsp; </b></td>								
+								</tr>
+								<tr>
+									<td align="left"><b> Civilit&eacute; </b><br></br>
+													<select id="civilite" onchange="VerifListe();">
+													<option value="monsieur">Monsieur</option>
+													<option value="mademoiselle">Mademoiselle</option>
+													<option value="madame">Madame</option></select></td>
+									<td align="left"><b> E-mail </b><br></br>
+													<input id="email" type="text" name="email" size="24"></input></td>									
+								</tr>
+								<tr>
+									<td align="left"><b> Nom </b><br></br>
+													<input id="nom" type="text" name="nom" size="24"></input></td>
+									<td align="left"><b> Confirmez votre e-mail </b><br></br>
+													<input id="email2" type="text" name="email2" size="24"></input></td>									
+								</tr>
+								<tr>
+									<td align="left"><b> Pr&eacute;nom </b><br></br>
+													<input id="prenom" type="text" name="prenom" size="24"></input></td>
+									<td align="left"><b> T&eacute;l&eacute;phone mobile </b><br></br>
+													<input id="telephone" type="text" name="telephone" size="24"></input></td>									
+								</tr>
+								<tr>
+									<td colspan="4" align="center"><input type="submit" class="bouton" value="Valider"></input></td>									
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</article>
+				<aside>
+					<div id="entreprise_title">
+						Vous-êtes une entreprise?
+					</div>
+					<div id="entreprise_section">
+						Si vous &ecirc;tes une entreprise, ajouter du bla bla bla, cliquez <a href="#">ici hihi</a>
+					</div>
+				</aside>
 			</section>
 		</div>
     </body>

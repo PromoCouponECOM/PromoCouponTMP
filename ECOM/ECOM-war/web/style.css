@@ -1,3 +1,5 @@
+/********** BACKGROUNDS **********/
+/*background*/
 body
 {
     font-family: 'Trebuchet MS', Arial, sans-serif;
@@ -5,37 +7,23 @@ body
     color: #181818;
 }
 
+/*background du site*/
 #wrapper 
 {
 	background-color : pink;
 	border-radius: 5px;
 	box-shadow: 0px 2px 5px #1c1a19;
-	left: 20%;
-	margin-left: -90px;
-	position: absolute;
 	width: 1000px;
 	height: 680px;
+	left: 50%;
+	margin-left: -500px;
+	position: absolute;
 }
 
-#titre_principal
-{
-	width:240px;
-	text-align: left;
-}
 
-#navigation
-{
-	width:500px;
-	text-align: center;
-}
 
-#compte
-{
-	width:240px;
-	text-align: right;
-	font-size: 10px;
-}
-
+/********** HEADER **********/
+/*position du Header*/
 header
 {
 	position: relative;
@@ -52,12 +40,39 @@ header nav div, header nav li
 	margin-left: auto;
 }
 
+/*logo PromoCoupon*/
+#titre_principal
+{
+	width:240px;
+	text-align: left;
+}
+
+/*barre de navigation : Accueil, Toutes les promos, Vers chez moi*/
+#navigation
+{
+	width:500px;
+	text-align: center;
+}
+
+/*connection au compte*/
+#compte
+{
+	width:240px;
+	text-align: right;
+	font-size: 10px;
+}
+
+
+
+/********** SECTION **********/
+/*disposition générale*/
 section nav, article, aside
 {
     display: inline-block;
     vertical-align: top;
 }
 
+/*menu categories*/
 section nav
 {
 	position: relative;
@@ -66,6 +81,12 @@ section nav
 	box-shadow: 0px 2px 5px #1c1a19;
 }
 
+section nav li
+{
+	margin-top: 10px;
+}
+
+/*menu choisir la ville */
 #lieu
 {
 	margin-top: 40px;
@@ -73,6 +94,7 @@ section nav
 	text-align: center;
 }
 
+/*menu categories*/
 #categories
 {
 	height:400px;
@@ -80,6 +102,7 @@ section nav
 	font-size: 14px;
 }
 
+/*barre de recherche*/
 #recherche
 {
 	height:48px;
@@ -87,17 +110,14 @@ section nav
 	font-size: 10px;
 }
 
+/*affichage des promotions*/
 article
 {
     width: 640px;
     margin-right: 15px;
 }
 
-section nav li
-{
-	margin-top: 10px;
-}
-
+/*barre coté droit*/
 aside
 {
 	position: relative;

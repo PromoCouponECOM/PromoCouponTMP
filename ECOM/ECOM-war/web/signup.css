@@ -1,3 +1,5 @@
+/********** BACKGROUNDS **********/
+/*background*/
 body
 {
     font-family: 'Trebuchet MS', Arial, sans-serif;
@@ -5,37 +7,23 @@ body
     color: #181818;
 }
 
+/*background du site*/
 #wrapper 
 {
 	background-color : pink;
 	border-radius: 5px;
 	box-shadow: 0px 2px 5px #1c1a19;
-	left: 20%;
-	margin-left: -90px;
-	position: absolute;
 	width: 1000px;
 	height: 680px;
+	left: 50%;
+	margin-left: -500px;
+	position: absolute;
 }
 
-#titre_principal
-{
-	width:240px;
-	text-align: left;
-}
 
-#navigation
-{
-	width:500px;
-	text-align: center;
-}
 
-#compte
-{
-	width:240px;
-	text-align: right;
-	font-size: 10px;
-}
-
+/********** HEADER **********/
+/*position du Header*/
 header
 {
 	position: relative;
@@ -50,4 +38,76 @@ header nav div, header nav li
     display: inline-block;
     margin-right: auto;
 	margin-left: auto;
+}
+
+/*logo PromoCoupon*/
+#titre_principal
+{
+	width:240px;
+	text-align: left;
+}
+
+/*barre de navigation : Accueil, Toutes les promos, Vers chez moi*/
+#navigation
+{
+	width:500px;
+	text-align: center;
+}
+
+/*connection au compte*/
+#compte
+{
+	width:240px;
+	text-align: right;
+	font-size: 10px;
+}
+
+
+/********** SECTION **********/
+/* disposition de section */
+article, aside 
+{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* formulaire coté client */
+article
+{
+	width : 800px;
+}
+
+#client_title
+{
+	margin-top: 10px;
+	height: 30px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#client_section
+{
+}
+
+/* information coté entreprise */
+aside
+{
+	width : 195px;
+	height : 601px;
+	position: relative;
+    background-color: #706b64;
+    box-shadow: 0px 2px 5px #1c1a19;
+    border-radius: 5px;
+}
+
+#entreprise_title
+{
+	margin-top: 10px;
+	height: 30px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#entreprise_section
+{
 }
