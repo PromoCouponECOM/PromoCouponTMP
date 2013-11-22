@@ -14,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author zalgo
+ * @author mazetk
  */
-@WebServlet(urlPatterns = {"/ControllerServlet"})
+@WebServlet(urlPatterns = {"/index.jsp", "/register", "/login", "/cart"})
 public class ControllerServlet extends HttpServlet {
 
     /**
