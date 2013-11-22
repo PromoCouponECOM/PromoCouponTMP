@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+		<meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Accueil</title>
+    </head>
+    <body>
+		<div id="wrapper">
+			<header>
+				<nav>
+					<div id="titre_principal">
+						<h2><a href="index.xhtml">PromoCoupon</a></h2>
+					</div>
+					<div id="navigation">
+						<ul>
+							<li><a href="index.xhtml">Accueil</a></li>
+							<li><a href="touteslespromos.xhtml">Toutes les promos</a></li>
+							<li><a href="verschezmoi.xhtml">Vers chez moi</a></li>
+						</ul>
+					</div>
+					<div id="compte">
+						<ul>
+							<input type="text" name="recherche" maxlength="14" value="Email" ></input>
+							<input type="text" name="recherche" maxlength="14" value="Mot de passe" ></input>
+							<li><a href="signup.xhtml">Cr&eacute;er un compte</a></li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			
+			<section>
+				<form method="post" action="signup_succes.xhtml" onsubmit="return verifchamps()">
+					<table align="center" cellspacing="20">
+						<tbody>
+							<tr>
+								<td align="left"><b> &nbsp; </b></td>
+								<td align="left"><b> &nbsp; </b></td>								
+							</tr>
+							<tr>
+								<td align="left"><b> &nbsp; </b></td>
+								<td align="left"><b> &nbsp; </b></td>								
+							</tr>
+														<tr>
+								<td align="left"><b> &nbsp; </b></td>
+								<td align="left"><b> &nbsp; </b></td>								
+							</tr>
+							<tr>
+								<td align="left"><b> Civilit&eacute; </b><br></br>
+												<select id="civilite" onchange="VerifListe();">
+												<option value="monsieur">Monsieur</option>
+												<option value="mademoiselle">Mademoiselle</option>
+												<option value="madame">Madame</option></select></td>
+								<td align="left"><b> E-mail </b><br></br>
+												<input id="email" type="text" name="email" size="24"></input></td>									
+							</tr>
+							<tr>
+								<td align="left"><b> Nom </b><br></br>
+												<input id="nom" type="text" name="nom" size="24"></input></td>
+								<td align="left"><b> Confirmez votre e-mail </b><br></br>
+												<input id="email2" type="text" name="email2" size="24"></input></td>									
+							</tr>
+							<tr>
+								<td align="left"><b> Pr&eacute;nom </b><br></br>
+												<input id="prenom" type="text" name="prenom" size="24"></input></td>
+								<td align="left"><b> T&eacute;l&eacute;phone mobile </b><br></br>
+												<input id="telephone" type="text" name="telephone" size="24"></input></td>									
+							</tr>
+							<tr>
+								<td colspan="4" align="center"><input type="submit" class="bouton" value="Valider"></input></td>									
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</section>
+		</div>
+    </body>
+</html>
+
