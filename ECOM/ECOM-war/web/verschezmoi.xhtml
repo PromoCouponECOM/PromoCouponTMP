@@ -5,6 +5,7 @@
     <head>
 		<meta charset="utf-8" />
         <link rel="stylesheet" href="style.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
         <title>Vers chez moi</title>
     </head>
     <body>
@@ -21,16 +22,18 @@
 							<li><a href="verschezmoi.xhtml">Vers chez moi</a></li>
 						</ul>
 					</div>
-					<div id="compte">
-						<form method="post" action="index.xhtml" onsubmit="return verifchamps()">
-							<table align="center" cellspacing="0">
-								<tbody>
-								<tr><td align="right"><input type="text" style="width:100px; height:12px;" name="recherche" maxlength="14" value="Email"></input></td></tr>
-								<tr><td align="right"><input type="text" style="width:100px; height:12px;" name="recherche" maxlength="14" value="Mot de passe"></input></td><td align="left"><input type="submit" style="width:30px; height:20px; text-align: left; font-size:10px" class="bouton" value="OK"></input></td></tr>								
-								<tr><td align="right"><a href="signup.xhtml">S'inscrire</a> &nbsp; <a href="#">Mpd perdu</a></td></tr>
-								</tbody>
-							</table>
+					<div id="compte">						
+						<a href="#" class="click_connect">S'identifier</a> &nbsp; <a href="signup.xhtml">S'inscrire</a>
+					</div>
+					<div id="boxLogin">
+						<h3>Votre Compte</h3>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="fermer" class="fermer" href="#">fermer</a>
+						<form action="" method="post" name="form_connexion">
+							<input class="loginField" name="email" type="text" style="width:150px; height:13px;" value="Email" />
+							<input class="loginField" name="password" type="password" style="width:150px; height:13px;" value="Mot de passe" />
+							<input name="submit" type="submit" value="ok"/>
 						</form>
+						<a id="mdpPerdu" href="#" style="font-size:11px;">Mot de passe perdu ?</a>
 					</div>
 				</nav>
 			</header>
@@ -88,5 +91,31 @@
 			Conditions d'utilisatio etc... gna gna gna
 			</footer>
 		</div>
+				
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#boxLogin').hide(); //Si l'utilisateur a javascript on cache la box de login pour pas surcharger la page
+
+    $('.click_connect').click(function(){
+        $('#boxLogin').fadeIn('slow');
+    });
+
+    $('.fermer').click(function(){
+        $('#boxLogin').fadeOut('slow');
+    });
+
+    $('#mdpPerdu').click(function(){
+        erreur("mdp_perdu");
+        return false;
+    });
+
+    $('.loginField').focus(function(){ //Supprime les textes par d�fauts des input lors du click sur ceux-ci
+        if($(this).val()=='Email' || $(this).val()=='Mot de passe'){
+            $(this).val('');
+        }
+    });
+});
+</script> 
+
     </body>
 </html>
