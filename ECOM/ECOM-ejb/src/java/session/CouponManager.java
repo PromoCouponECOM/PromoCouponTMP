@@ -21,20 +21,22 @@ import javax.persistence.Query;
 public class CouponManager {
     @PersistenceContext(unitName = "ECOM-ejbPU")
     private EntityManager em;
-
-    public void persist(Object object) {
-        em.persist(object);
-    }
-
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
-
-    public List<Coupon> getLesCoupons() {
-        Query q = em.createNamedQuery("Adresse.findAll");
-        return q.getResultList();
+   
+//    public Coupon getCoupon(int i){
+//        Query query = em.createNamedQuery("Coupon.findByIdCoupon").setParameter("idCoupon", i);
+//        return query;
+//    }singleton
+    
+    public List<Coupon> getAllCoupon() {
+        Query query = em.createNamedQuery("Coupon.findAll");
+        return query.getResultList();
     }
 
     public Coupon update(Coupon coupon) {
         return em.merge(coupon);
-    }  
+    }
+
+    public void persist(Object object) {
+        em.persist(object);
+    }
 }

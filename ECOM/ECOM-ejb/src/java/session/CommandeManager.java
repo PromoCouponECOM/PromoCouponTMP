@@ -22,22 +22,16 @@ public class CommandeManager {
     @PersistenceContext(unitName = "ECOM-ejbPU")
     private EntityManager em;
 
+    public List<Commande> getAllCommande() {
+           Query query = em.createNamedQuery("Commande.findAll");
+           return query.getResultList();
+    }
+
+    public Commande update(Commande commande) {
+        return em.merge(commande);
+    }
+
     public void persist(Object object) {
         em.persist(object);
     }
-
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
-
-    public List<Commande> getLesCommandes() {
-        Query q = em.createNamedQuery("Adresse.findAll");
-        return q.getResultList();
-    }
-
-    public Commande update(Commande cmd) {
-        return em.merge(cmd);
-    }
-    
-    
-    
 }

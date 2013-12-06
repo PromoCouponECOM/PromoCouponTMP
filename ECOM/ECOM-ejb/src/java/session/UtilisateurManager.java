@@ -19,22 +19,29 @@ import javax.persistence.Query;
 @Stateless
 @LocalBean
 public class UtilisateurManager {
+
     @PersistenceContext(unitName = "ECOM-ejbPU")
     private EntityManager em;
+
+    //executes a "named query" whose name is "Utilisateur.findall". Look at the beginning of the file Utilisateur.java, you will find this query. It's equivalent to a select * from Utilisateur. But as we are working with objects, in that case we will return a List of Utilisateurs, not tuples.
+    public List<Utilisateur> getAllUtilisateurs() {
+        Query query = em.createNamedQuery("Utilisateur.findAll");
+        //System.out.println("²²²²²²²²²²²²²²²²²²²²²²²²²²²²²²²²²²²");
+        return query.getResultList();
+    }
+
+    public Utilisateur insertUtilisateur() {
+        
+        em.close();
+        return null;
+    }
+    //update(Utilisateur utilisateur)... updates the database content with the value of the Customer passed as a parameter. The em.merge(utilisateur);
+
+    public Utilisateur update(Utilisateur utilisateur) {
+        return em.merge(utilisateur);
+    }
 
     public void persist(Object object) {
         em.persist(object);
     }
-
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
-
-    public List<Utilisateur> getLesUtilisateurs() {
-        Query q = em.createNamedQuery("Adresse.findAll");
-        return q.getResultList();
-    }
-
-    public Utilisateur update(Utilisateur user) {
-        return em.merge(user);
-    }   
 }

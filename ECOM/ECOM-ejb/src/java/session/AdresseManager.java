@@ -22,21 +22,16 @@ public class AdresseManager {
     @PersistenceContext(unitName = "ECOM-ejbPU")
     private EntityManager em;
 
+    public List<Adresse> getAllAdresses() {
+        Query query=em.createNamedQuery("Adresse.findAll");
+        return query.getResultList();
+    }
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
-    
+    public Adresse update(Adresse adresse) {
+        return em.merge(adresse);
+    }
+
     public void persist(Object object) {
         em.persist(object);
-    }
-    
-    public List<Adresse> getLesAdresses() {
-        Query q = em.createNamedQuery("Adresse.findAll");
-        return q.getResultList();
-    }
-
-
-    public Adresse update(Adresse adr) {
-        return em.merge(adr);
     }
 }

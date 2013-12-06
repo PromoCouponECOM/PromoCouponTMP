@@ -10,7 +10,6 @@ import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 /**
  *
@@ -22,19 +21,15 @@ public class OffreManager {
     @PersistenceContext(unitName = "ECOM-ejbPU")
     private EntityManager em;
 
+    public List<Offre> getAllOffer() {
+        return null;
+    }
+
+    public Offre update(Offre offre) {
+        return null;
+    }
+
     public void persist(Object object) {
         em.persist(object);
     }
-
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
-
-    public List<Offre> getLesOffres() {
-        Query q = em.createNamedQuery("Adresse.findAll");
-        return q.getResultList();
-    }
-
-    public Offre update(Offre off) {
-        return em.merge(off);
-    }    
 }
