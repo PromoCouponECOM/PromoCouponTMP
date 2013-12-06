@@ -4,9 +4,36 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <head>
 		<meta charset="utf-8" />
-        <link rel="stylesheet" href="style.css" />
-		<link rel="stylesheet" href="menu.css" />
+        <link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/menu.css" />
+		<link rel="stylesheet" href="css/villes.css" />
+		<link rel="stylesheet" href="css/toolbar.css" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('#boxLogin').hide(); //Si l'utilisateur a javascript on cache la box de login pour pas surcharger la page
+
+			$('.click_connect').click(function(){
+				$('#boxLogin').fadeIn('slow');
+			});
+
+			$('.fermer').click(function(){
+				$('#boxLogin').fadeOut('slow');
+			});
+
+			$('#mdpPerdu').click(function(){
+				erreur("mdp_perdu");
+				return false;
+			});
+
+			$('.loginField').focus(function(){ //Supprime les textes par d�fauts des input lors du click sur ceux-ci
+				if($(this).val()=='Email' || $(this).val()=='Mot de passe'){
+					$(this).val('');
+				}
+			});
+		});
+		</script> 
+		
         <title>Toutes les promos</title>
     </head>
     <body>
@@ -132,52 +159,36 @@
 						<p>Afficher les promotions ici</p>
 					</div>
 				</article>
-				<aside>
-					<div id="articles">
-						<ul>
-							<li><a href="#">Mon Panier</a></li>
-							<li><a href="#">Mes derni&egrave;res consultations</a></li>
-							<li><a href="#">Recherche</a></li>
-						</ul>
-					</div>
-					<div id="options">
-						<ul>
-							<li><a href="#">Changer la langue</a></li>
-							<li><a href="#">Aide/Contact</a></li>
-							<li><a href="#">A propos</a></li>
-						</ul>
-					</div>             
-				</aside>
 			</section>         
 			<footer>
 			Conditions d'utilisatio etc... gna gna gna
 			</footer>
 		</div>
 		
-<script type="text/javascript">
-$(document).ready(function(){
-    $('#boxLogin').hide(); //Si l'utilisateur a javascript on cache la box de login pour pas surcharger la page
-
-    $('.click_connect').click(function(){
-        $('#boxLogin').fadeIn('slow');
-    });
-
-    $('.fermer').click(function(){
-        $('#boxLogin').fadeOut('slow');
-    });
-
-    $('#mdpPerdu').click(function(){
-        erreur("mdp_perdu");
-        return false;
-    });
-
-    $('.loginField').focus(function(){ //Supprime les textes par d�fauts des input lors du click sur ceux-ci
-        if($(this).val()=='Email' || $(this).val()=='Mot de passe'){
-            $(this).val('');
-        }
-    });
-});
-</script> 
-
+		<aside>			 
+			<div id="articles" class="barredoutils">
+				<ul>
+					<li><a href="#"><img src="icones/Search.png" width="50%" height="50%" /></a>
+					<div id="coucou" class="submenu">
+					<form id="search" action="#" methode="get" class="serchform">
+						<input id="searche" type="text" name="q"></input>
+						<button type="submit" titile="Chercher" class="button">
+										ok</button>
+						</form>
+					</div>
+					</li>
+					<li><a href="#"><img src="icones/history.png" width="50%" height="50%" /></a></li>
+					<li><a href="#"><img src="icones/Cart.png" width="50%" height="50%" /></a></li>
+				</ul>
+			</div>
+			<div id="options" class="barredoutils">
+				<ul>
+					<li><a href="#"><img src="icones/Globe.png" width="50%" height="50%" /></a></li>
+					<li><a href="#"><img src="icones/Email.png" width="50%" height="50%" /></a></li>
+					<li><a href="#"><img src="icones/Light.png" width="50%" height="50%" /></a></li>
+				</ul>
+			</div>             
+		</aside>
+		
     </body>
 </html>

@@ -1,0 +1,80 @@
+#lieu
+{
+	margin-top: 30px;
+	height:80px;
+	text-align: center;
+	padding-left: 0px;
+	font-family:arial;
+}
+
+#lieu a
+{
+	text-decoration:none;
+}
+
+#nameLieu
+{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+#lieu img
+{
+	width : 18px; 
+	height : 18px; 
+}
+
+#listeVille
+{
+	margin: 0;
+	padding: 0;
+	left:100%;
+	position: absolute;
+	top: 0px;
+	width: 520px;
+	z-index: 1;
+}
+
+#nameLieu, #listeVille
+{
+	display: inline-block;
+}
+
+#listeVille li, #listeVille 
+{
+	display: block;
+	float: left; 
+	margin: 0; 
+	padding: 0;
+} 
+
+#listeVille li 
+{
+	width : 140px; 
+	background-color: #333333; 
+} 
+
+#listeVille  li a 
+{ 
+	text-decoration:none;
+	color: #EBEBEB;
+	font-size: 16px;
+	display: block; 
+	padding: 0.5em 1em 0.5em 1em; 
+	text-align: left;
+} 
+
+#listeVille li:last-child{
+	border-radius:0 0 8px 0;
+}
+
+#listeVille li:hover a
+{
+	color: #0084B5; 
+	background-color: #EBEBEB;
+}
+
+#listeVille li:hover:last-child a{
+	border-radius:0 0 8px 0;
+	border-radius:0 0 8px 0;
+}

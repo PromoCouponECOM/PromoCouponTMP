@@ -20,7 +20,10 @@ body
 	position: absolute;
 }
 
-
+wrapper, aside
+{
+    display: inline-block;
+}
 
 /********** HEADER **********/
 /*position du Header*/
@@ -91,7 +94,7 @@ margin-top: -20px;
 
 /********** SECTION **********/
 /* disposition de section */
-article, aside 
+article, #entreprise 
 {
 	display: inline-block;
 	vertical-align: top;
@@ -122,7 +125,7 @@ article table
 }
 
 /* information coté entreprise */
-aside
+#entreprise
 {
 	width : 215px;
 	height : 601px;

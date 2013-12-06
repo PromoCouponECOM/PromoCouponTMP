@@ -1,26 +1,27 @@
-#categories ul 
+#menu-deroulant
 {
-padding-left: 0px;
+padding: 0px;
 }
 
-#categories ul ul
-{
-margin: 0;
-padding: 0;
-display: none;
-left:100%;
-position: absolute;
-top: 0px;
-width: 150px;
-z-index: 1;
-}
-
-#categories li
+#menu-deroulant li
 {
 padding: 5px 0px;
 width: 100%;
 list-style-type: none;
 position: relative;
+}
+
+#menu-deroulant ul
+{
+padding: 0;
+left:100%;
+position: absolute;
+top: 0px;
+width: 150px;
+z-index: 1;
+max-height:0;
+overflow:hidden;
+float: left;
 }
 
 #menu-deroulant li:first-child{
@@ -39,16 +40,21 @@ border-radius:0;
 #menu-deroulant ul li:hover{
 border-radius:0;
 }
+
 #menu-deroulant ul li:first-child{
 border-radius:0 8px 0 0;
 }
+
 #menu-deroulant ul li:last-child{
 border-radius:0 0 8px 8px;
 }
 
-#categories li:hover ul
+#menu-deroulant li:hover ul
 {
-display: block;
+-moz-transition: .5s all .1s;
+-webkit-transition: .5s all .1s;
+transition: .5s all .1s;
+max-height:20em;
 }
 
 /* background des liens menus */
@@ -88,14 +94,14 @@ background-image:-webkit-linear-gradient(top, #FFFC00 0%, #797A00 100%);
 background-image:linear-gradient(to bottom, #FFFC00 0%, #797A00 100%);
 }
 #menu-deroulant li:nth-child(8){
-background-color: #F6AD1A;
-background-image:-webkit-linear-gradient(top, #F6AD1A 0%, #9F391A 100%);
-background-image:linear-gradient(to bottom, #F6AD1A 0%, #9F391A 100%);
-}
-#menu-deroulant li:last-child{
 background-color: #CFFF6A;
 background-image:-webkit-linear-gradient(top, #CFFF6A 0%, #677F35 100%);
 background-image:linear-gradient(to bottom, #CFFF6A 0%, #677F35 100%);
+}
+#menu-deroulant li:last-child{
+background-color: #F6AD1A;
+background-image:-webkit-linear-gradient(top, #F6AD1A 0%, #9F391A 100%);
+background-image:linear-gradient(to bottom, #F6AD1A 0%, #9F391A 100%);
 }
 /* background des liens sous menus */
 #menu-deroulant li:first-child li{
@@ -120,10 +126,10 @@ background:#5B0000;
 background:#797A00;
 }
 #menu-deroulant li:nth-child(8) li{
-background:#9F391A;
+background:#677F35;
 }
 #menu-deroulant li:last-child li{
-background:#677F35;
+background:#9F391A;
 }
 /* background des liens menus et sous menus au survol */
 #menu-deroulant li:first-child:hover, #menu-deroulant li:first-child li:hover{
@@ -148,10 +154,10 @@ background:#FF2121;
 background: #FFFC00;
 }
 #menu-deroulant li:nth-child(8):hover, #menu-deroulant li:nth-child(8) li:hover{
-background:#F6AD1A;
+background:#CFFF6A;
 }
 #menu-deroulant li:last-child:hover, #menu-deroulant li:last-child li:hover{
-background:#CFFF6A;
+background:#F6AD1A;
 }
 
 /* les a href */
@@ -169,6 +175,6 @@ padding:8px 0;
 color:#fff;
 text-transform:inherit;
 }
-#menu-deroulant li:hover a, #menu-demo2 li li:hover a{
+#menu-deroulant li:hover a, #menu-deroulant li li:hover a{
 color:#000;
 }
