@@ -28,6 +28,8 @@
                         <f:convertDateTime pattern="MM/dd/yyyy" />
                     </h:inputText>
                 </h:panelGrid>
+                <h:commandButton id="back" value="Back" action="#{adresseMBean.list()}"/>  
+                <h:commandButton id="update" value="Update" action="#{adresseMBean.update()}"/>  
             </h:form>
         </f:view>
 
