@@ -1,27 +1,22 @@
 #lieu
 {
 	margin-top: 30px;
-	height:80px;
 	text-align: center;
 	padding-left: 0px;
 	font-family:arial;
-}
-
-#lieu a
-{
-	text-decoration:none;
 }
 
 #nameLieu
 {
 	font-size: 22px;
 	font-weight: bold;
+	color: #FFFFFF;
 }
 
 #lieu img
 {
-	width : 18px; 
-	height : 18px; 
+	width : 15px; 
+	height : 15px; 
 }
 
 #listeVille
@@ -51,13 +46,12 @@
 #listeVille li 
 {
 	width : 140px; 
-	background-color: #333333; 
+	background-color: #004D2F; 
 } 
 
 #listeVille  li a 
 { 
-	text-decoration:none;
-	color: #EBEBEB;
+	color: #FFFFFF;
 	font-size: 16px;
 	display: block; 
 	padding: 0.5em 1em 0.5em 1em; 
@@ -70,8 +64,8 @@
 
 #listeVille li:hover a
 {
-	color: #0084B5; 
-	background-color: #EBEBEB;
+	color: #000000; 
+	background-color: #00AE6A;
 }
 
 #listeVille li:hover:last-child a{

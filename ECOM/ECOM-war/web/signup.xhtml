@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <head>
+     <head>
 		<meta charset="utf-8" />
         <link rel="stylesheet" href="css/signup.css" />
 		<link rel="stylesheet" href="css/toolbar.css" />
@@ -12,11 +12,11 @@
 			$('#boxLogin').hide(); //Si l'utilisateur a javascript on cache la box de login pour pas surcharger la page
 
 			$('.click_connect').click(function(){
-				$('#boxLogin').fadeIn('slow');
+				$('#boxLogin').fadeIn(400);
 			});
 
 			$('.fermer').click(function(){
-				$('#boxLogin').fadeOut('slow');
+				$('#boxLogin').fadeOut(400);
 			});
 
 			$('#mdpPerdu').click(function(){
@@ -24,13 +24,24 @@
 				return false;
 			});
 
-			$('.loginField').focus(function(){ //Supprime les textes par d�fauts des input lors du click sur ceux-ci
-				if($(this).val()=='Email' || $(this).val()=='Mot de passe'){
+			$('.field').focus(function(){ //Supprime les textes par défauts des input lors du click sur ceux-ci
+				if($(this).val()=='Email' || $(this).val()=='Mot de passe' || $(this).val()=='Rechercher'){
 					$(this).val('');
 				}
 			});
+			
+			$('#listeVille').hide(); //Si l'utilisateur a javascript on cache l'affichage des villes
+			
+			$('.click_display_ville').click(function(){
+				if ($('#listeVille').is(':visible')) {
+					$('#listeVille').fadeOut(400);
+				}
+				else {
+					$('#listeVille').fadeIn(400);
+				}
+			});					
 		});
-		</script> 
+		</script>
 		
         <title>Sign Up</title>
     </head>
@@ -39,24 +50,24 @@
 			<header>
 				<nav>
 					<div id="titre_principal">
-						<h2><a href="index.xhtml">PromoCoupon</a></h2>
+						<a href="index.xhtml"><span id="promo">Promo</span><span id="coupon">Coupon</span></a>
 					</div>
 					<div id="navigation">
 						<ul>
-							<li><a href="index.xhtml">Accueil</a></li>
-							<li><a href="touteslespromos.xhtml">Toutes les promos</a></li>
-							<li><a href="verschezmoi.xhtml">Vers chez moi</a></li>
+							<li><a href="index.xhtml" style="color:#FFFFFF;">Accueil</a></li>
+							<li><a href="touteslespromos.xhtml" style="color:#FFFFFF;"> Toutes les promos</a></li>
+							<li><a href="verschezmoi.xhtml" style="color:#FFFFFF;">Vers chez moi</a></li>
 						</ul>
 					</div>
 					<div id="compte">						
-						<a href="#" class="click_connect">S'identifier</a> &nbsp; <a href="signup.xhtml">S'inscrire</a>
+						<a href="#" class="click_connect">S'identifier</a> | <a href="signup.xhtml">S'inscrire</a>
 					</div>
 					<div id="boxLogin">
 						<h3>Votre Compte</h3>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="fermer" class="fermer" href="#">fermer</a>
 						<form action="" method="post" name="form_connexion">
-							<input class="loginField" name="email" type="text" style="width:150px; height:13px;" value="Email" />
-							<input class="loginField" name="password" type="password" style="width:150px; height:13px;" value="Mot de passe" />
+							<input class="field" name="email" type="text" style="width:150px; height:13px;" value="Email" />
+							<input class="field" name="password" type="password" style="width:150px; height:13px;" value="Mot de passe" />
 							<input name="submit" type="submit" value="ok"/>
 						</form>
 						<a id="mdpPerdu" href="#" style="font-size:11px;">Mot de passe perdu ?</a>
@@ -100,13 +111,13 @@
 								</tr>
 								<tr>
 									<td align="right"><b> Code postal* :</b></td>
-									<td align="left"><input id="postal" type="number" name="postal" size="24" maxlength="5"></input></td>
+									<td align="left"><input id="postal" type="text" name="postal" size="24" maxlength="5"></input></td>
 									<td align="right"><b> Ville :</b></td>					
 									<td align="left"><input id="ville" type="text" name="ville" size="24" maxlength="24"></input></td>									
 								</tr>
 								<tr>
 									<td align="right"><b> T&eacute;l&eacute;phone :</b></td>
-									<td align="left"><input id="telephone" type="number" name="telephone" size="24" maxlength="10"></input></td>								
+									<td align="left"><input id="telephone" type="text" name="telephone" size="24" maxlength="10"></input></td>								
 								</tr>
 								<tr>
 									<td align="left"><b> &nbsp; </b></td>								
