@@ -24,7 +24,10 @@ public class AdresseMBean implements Serializable{
     private Adresse adresse;
     @EJB
     private AdresseManager adresseManager;
+    
     public AdresseMBean() {
+        adresse=new Adresse();
+        adresseManager = new AdresseManager();
     }
      /** 
      * returns customer list for display in a datatable DataTable 
@@ -50,7 +53,7 @@ public class AdresseMBean implements Serializable{
   
     /** 
      * Action handler - Called when a line in the table is clicked 
-     * @param utilisateur 
+     * @param adresse 
      * @return 
      */  
     public String showDetails(Adresse adresse) {  
@@ -63,7 +66,7 @@ public class AdresseMBean implements Serializable{
      * called when one press the update button in the form 
      * @return 
      */  
-    public String update() {  
+    public String  update() {  
         System.out.println("###UPDATE###");  
         adresse = adresseManager.update(adresse);  
         return "AdresseList"; // will display the customer list in a table  
@@ -76,4 +79,9 @@ public class AdresseMBean implements Serializable{
         System.out.println("###LIST###");  
         return "AdresseList";  
     }  
+
+    public void update(Adresse adrU) {
+        System.out.println("###UPDATE###");  
+        adresseManager.update(adrU);  
+    }
 }
