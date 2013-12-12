@@ -183,6 +183,17 @@ article table
 	text-align: right;
 }
 
+table {
+margin-top: 3%;
+}
+
+td.titres {
+
+	font-size: 20px;
+	text-align: left;
+
+}
+
 /* information coté entreprise */
 #entreprise
 {
@@ -202,6 +213,23 @@ article table
 
 #entreprise_section
 {
+}
+
+
+
+/********** ASIDE **********/
+#articles
+{
+	margin-top: 150px;
+    height:250px;
+	text-align: left;
+	font-size: 14px;
+}
+
+#options
+{
+	text-align: left;
+	font-size: 14px;
 }
 
 
