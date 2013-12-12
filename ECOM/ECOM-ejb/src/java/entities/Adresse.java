@@ -44,31 +44,31 @@ public class Adresse implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "idAdresse")
-    Long idAdresse;
+    private Long idAdresse;
     @Size(max = 100)
     @Column(name = "numEtRue")
-     String numEtRue;
+    private String numEtRue;
     @Size(max = 100)
     @Column(name = "comple")
-     String comple;
+    private String comple;
     @Size(max = 5)
     @Column(name = "codePostale")
-     String codePostale;
+    private String codePostale;
     @Size(max = 35)
     @Column(name = "ville")
-     String ville;
+    private String ville;
     @Size(max = 35)
     @Column(name = "pays")
-     String pays;
+    private String pays;
     @Column(name = "dateModif")
     @Temporal(TemporalType.DATE)
-     Date dateModif;
+    private Date dateModif;
     @OneToMany(mappedBy = "adrU")
-     Collection<Utilisateur> utilisateurCollection;
+    private Collection<Utilisateur> utilisateurCollection;
     @OneToMany(mappedBy = "adrRecep")
-     Collection<Livraison> livraisonCollection;
+    private Collection<Livraison> livraisonCollection;
     @OneToMany(mappedBy = "adrE")
-     Collection<Entreprise> entrepriseCollection;
+    private Collection<Entreprise> entrepriseCollection;
 
     public Adresse() {
     }

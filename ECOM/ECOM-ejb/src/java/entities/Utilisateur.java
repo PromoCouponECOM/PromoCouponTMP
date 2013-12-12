@@ -67,7 +67,7 @@ public class Utilisateur implements Serializable {
     private Date dataModif;
     @JoinColumn(name = "adrU", referencedColumnName = "idAdresse")
     @ManyToOne
-     Adresse adrU;
+    private Adresse adrU;
 
     public Utilisateur() {
     }
