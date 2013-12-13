@@ -13,7 +13,6 @@ import java.util.Map;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
-import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import session.AdresseManager;
 import session.UtilisateurManager;
@@ -26,8 +25,6 @@ import session.UtilisateurManager;
 @SessionScoped
 
 public class InscriptionMBean implements Serializable{
-    @PersistenceContext(unitName = "ECOM-ejbPU")
-    private EntityManager em;
     private Map<String, String> settings;
     @EJB
     private AdresseManager adrM;
