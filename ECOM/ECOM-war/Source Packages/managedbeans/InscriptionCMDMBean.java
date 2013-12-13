@@ -6,6 +6,7 @@
 
 package managedbeans;
 
+import entities.Commande;
 import entities.Coupon;
 import entities.Livraison;
 import entities.Utilisateur;
@@ -36,6 +37,7 @@ public class InscriptionCMDMBean implements Serializable{
     private Utilisateur user;
     private Coupon coupon;
     private Livraison liv;
+    private Commande cmd;
     
     /**
      * Creates a new instance of InscriptionCMDMBean
@@ -56,6 +58,7 @@ public class InscriptionCMDMBean implements Serializable{
         if(coupon == null)
             System.out.println("###COUPON INCONNU###");
 
-        return "UtilisateurList";
+        
+        return "CouponList";
     }
 }
