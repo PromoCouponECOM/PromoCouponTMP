@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "Entreprise")
 @XmlRootElement
 @NamedQueries({
+    @NamedQuery(name = "Entreprise.maxId", query = "SELECT max(idE) FROM Entreprise"),
     @NamedQuery(name = "Entreprise.findAll", query = "SELECT e FROM Entreprise e"),
     @NamedQuery(name = "Entreprise.findByIdE", query = "SELECT e FROM Entreprise e WHERE e.idE = :idE"),
     @NamedQuery(name = "Entreprise.findByNomE", query = "SELECT e FROM Entreprise e WHERE e.nomE = :nomE"),
@@ -70,7 +71,7 @@ public class Entreprise implements Serializable {
     @Column(name = "consulE")
     private String consulE;
     @Column(name = "validation")
-    private Serializable validation;
+    private Integer validation;
     @Size(max = 14)
     @Column(name = "siret")
     private String siret;
@@ -151,11 +152,11 @@ public class Entreprise implements Serializable {
         this.consulE = consulE;
     }
 
-    public Serializable getValidation() {
+    public Integer getValidation() {
         return validation;
     }
 
-    public void setValidation(Serializable validation) {
+    public void setValidation(Integer validation) {
         this.validation = validation;
     }
 

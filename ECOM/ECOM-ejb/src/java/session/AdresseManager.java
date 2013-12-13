@@ -34,4 +34,9 @@ public class AdresseManager {
     public void persist(Object object) {
         em.persist(object);
     }
+    
+    public Integer nextId(){
+        Query query = em.createNamedQuery("Adresse.maxId");
+        return query.getResultList().indexOf(0)+1;
+    }
 }

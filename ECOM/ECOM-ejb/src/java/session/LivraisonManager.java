@@ -10,6 +10,7 @@ import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -23,14 +24,20 @@ public class LivraisonManager {
     private EntityManager em;
 
     public List<Livraison> getAllLivraison() {
-        return null;
+        Query query = em.createNamedQuery("Livraison.findAll");
+        return query.getResultList();
     }
 
     public Livraison update(Livraison livraison) {
-        return null;
+        return em.merge(livraison);
     }
 
     public void persist(Object object) {
         em.persist(object);
+    }
+    
+    public Integer nextId(){
+        Query query = em.createNamedQuery("Livraison.maxId");
+        return query.getResultList().indexOf(0)+1;
     }
 }
