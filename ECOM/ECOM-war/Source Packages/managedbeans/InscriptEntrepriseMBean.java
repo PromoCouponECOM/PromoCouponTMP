@@ -50,7 +50,7 @@ public class InscriptEntrepriseMBean implements Serializable {
     public void save(){
         
         //update db adresse
-        adr.setIdAdresse(Long.parseLong(settings.get("idAdr")));
+        adr.setIdAdresse(adrM.nextId());
         adr.setNumEtRue(settings.get("rue"));
         adr.setComple(settings.get("compl"));
         adr.setVille(settings.get("ville"));
@@ -59,9 +59,7 @@ public class InscriptEntrepriseMBean implements Serializable {
         adr.setDateModif(new Date());
         adrM.update(adr);
         
-        //
-        //in=new Integer(settings.get("idEnp"));
-        entrp.setIdE(Integer.parseInt(settings.get("idEnp")));
+        entrp.setIdE(entM.nextId());
         entrp.setMailE(settings.get("mailE"));
         entrp.setNomE(settings.get("nomE"));
         entrp.setPassE(settings.get("passE"));

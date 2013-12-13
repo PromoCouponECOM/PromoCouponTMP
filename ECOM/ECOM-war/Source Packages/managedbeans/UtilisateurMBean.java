@@ -6,6 +6,7 @@ package managedbeans;
 
 import entities.Utilisateur;
 import java.io.Serializable;
+import java.util.Iterator;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
@@ -42,6 +43,7 @@ public class UtilisateurMBean implements Serializable {
         }
     }
 
+    
     /**
      * returns details of a customer. Useful for displaying in a form a
      * customer's details
@@ -55,6 +57,8 @@ public class UtilisateurMBean implements Serializable {
     public Utilisateur getUser(){
         return user;
     }
+
+    
     /**
      * Action handler - Called when a line in the table is clicked
      *
@@ -97,5 +101,18 @@ public class UtilisateurMBean implements Serializable {
     public String list() {
         System.out.println("###LIST###");
         return "UtilisateurList";
+    }
+    
+    public Utilisateur getUserById(Integer id){
+         if ((users == null) || (users.isEmpty())) {
+            refresh();
+        }
+        Iterator it = users.iterator();
+        while( it.hasNext()){
+            Utilisateur tmp = (Utilisateur)it.next();
+            if(tmp.getIdU()==id)
+                return tmp;
+        }
+        return null;
     }
 }

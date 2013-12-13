@@ -28,7 +28,7 @@ public class UtilisateurManager {
         Query query = em.createNamedQuery("Utilisateur.findAll");
         return query.getResultList();
     }
-
+    
     public Utilisateur update(Utilisateur utilisateur) {
         return em.merge(utilisateur);
     }
@@ -41,4 +41,5 @@ public class UtilisateurManager {
         Query query = em.createNamedQuery("Utilisateur.maxId");
         return query.getResultList().indexOf(0)+1;
     }
+
 }
